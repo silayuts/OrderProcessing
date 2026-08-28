@@ -10,8 +10,10 @@ public class PercentageDiscount implements DiscountStrategy {
 
     @Override public double applyDiscount(Order order) {
         double total = order.getTotalPrice();
+        total = total - (total*percent/100) ;
+        //total = (100-percent)/100 * total ;
         // TODO (2a): คืนราคาหลังหักส่วนลด percent%
         //   hint: total - (total * percent / 100.0)
-        return /* ====== replace this ====== */ total;
+        return total;
     }
 }
